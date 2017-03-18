@@ -6,6 +6,22 @@ function multiplyArguments() {
 	//use the arguments keyword to multiply all of the arguments together and return the product
 	//if no arguments are passed in return 0
 	//if one argument is passed in just return it
+  var args = Array.prototype.slice.call(arguments);  
+	var sum = null;
+	if (args.length > 0) {
+		args.forEach(function(i){
+		if (i === 0) {
+			sum= 0;
+		} else if (sum === null) {
+			sum = i;
+			}  else {
+				sum = sum * i;
+			}
+		});
+	} else {
+		return 0;
+	}
+return sum;	
 }
 
 function invokeCallback(cb) {
